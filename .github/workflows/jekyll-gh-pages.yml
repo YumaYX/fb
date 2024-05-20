@@ -33,7 +33,6 @@ jobs:
         with:
           ruby-version: '3.3'
           bundler-cache: true
-      - name: Build Pages (markdown + ruby script)
         run: ruby app.rb
       - name: Setup Pages
         uses: actions/configure-pages@v5
