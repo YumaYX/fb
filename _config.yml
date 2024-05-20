@@ -1,0 +1,9 @@
+title: Favorite Books
+theme: jekyll-theme-minimal
+exclude:
+ - README.md
+ - Gemfile
+ - Gemfile.lock
+ - _config.yml
+ - app.rb
+ - urls.txt
