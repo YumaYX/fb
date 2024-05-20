@@ -18,4 +18,7 @@ urls.each do |url|
 end
 
 
-File.write("index.markdown", doc)
+
+require 'fileutils'
+FileUtils.mkdir("_site")
+File.write("_site/index.markdown", doc)
