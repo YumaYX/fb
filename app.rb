@@ -21,4 +21,4 @@ end
 
 require 'fileutils'
 FileUtils.mkdir("_site")
-File.write("_site/index.markdown", doc)
+File.write("_site/index.md", doc)
