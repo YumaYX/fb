@@ -17,7 +17,4 @@ urls.each do |url|
   doc = doc + "- [#{title}](#{url})\n"
 end
 
-require 'fileutils'
-FileUtils.mkdir("_site")
-File.write("_site/index.md", doc)
-
+File.write("index.md", doc)
