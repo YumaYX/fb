@@ -28,17 +28,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
           bundler-cache: true
       - name: Build Pages (markdown + ruby script)
-        run: |
-          bundle install
-          ruby app.rb
+        run: ruby app.rb
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
