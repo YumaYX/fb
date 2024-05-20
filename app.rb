@@ -3,6 +3,7 @@
 require "mechanize"
 
 def title_of(url)
+  return url
   page = Mechanize.new.get(url)
   page.title.gsub(/\|/,'\|')
 rescue StandardError => e
@@ -22,4 +23,3 @@ end
 require 'fileutils'
 FileUtils.mkdir("_site")
 File.write("_site/index.md", doc)
-File.write("index.md", doc)
