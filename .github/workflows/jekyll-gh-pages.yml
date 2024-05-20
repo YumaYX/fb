@@ -26,14 +26,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Build Pages (markdown + ruby script)
-        run: |
-          bundle install
-          ruby app.rb
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+      - run: bundle install
+      - name: Setup git config
+        run: ruby app.rb
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
