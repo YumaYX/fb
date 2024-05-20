@@ -31,7 +31,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Publish to RubyGems
-        run: ruby app.rb
+        run: |
+          bundle install
+          ruby app.rb
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
