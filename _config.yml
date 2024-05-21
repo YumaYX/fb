@@ -6,4 +6,3 @@ exclude:
  - Gemfile.lock
  - _config.yml
  - app.rb
- - urls.txt
