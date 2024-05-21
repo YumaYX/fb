@@ -34,9 +34,7 @@ jobs:
           ruby-version: '3.3'
           bundler-cache: true
       - name: Build Pages (markdown + ruby script)
-        run: |
-          gem install mechanize
-          ruby app.rb
+        run: ruby app.rb
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
