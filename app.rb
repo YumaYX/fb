@@ -3,7 +3,11 @@
 require "net/http"
 require "json"
 
-doc = String.new
+data = {
+  '978-4-7917-6555-3' => 'http://www.seidosha.co.jp/book/index.php?id=1779',
+  '978-4-334-95293-8' => 'https://www.kobunsha.com/shelf/book/isbn/9784334952938',
+  '978-4-478-06659-1' => 'https://www.diamond.co.jp/book/9784478066591.html'
+}
 
 def to_markdown(isbn, p_url)
   isbn = isbn.gsub(/-/, "")
@@ -26,11 +30,6 @@ def to_markdown(isbn, p_url)
   MARKDOWN
 end
 
-data = {
-  '978-4-7917-6555-3' => 'http://www.seidosha.co.jp/book/index.php?id=1779',
-  '978-4-334-95293-8' => 'https://www.kobunsha.com/shelf/book/isbn/9784334952938',
-  '978-4-478-06659-1' => 'https://www.diamond.co.jp/book/9784478066591.html'
-}
-
+doc = String.new
 data.sort.each { |isbn, url| doc += to_markdown(isbn, url) }
 File.write('index.md', doc)
